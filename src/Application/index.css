@@ -1,0 +1,31 @@
+.dark-background{
+    -fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #373e44, #151c28);
+    -fx-text-fill: white;
+    -fx-font-family: Hack;
+}
+
+.text{
+    -fx-text-fill: white;
+}
+
+.text-field{
+    -fx-background-color: rgba(0, 0, 0, 0.1);
+}
+
+.but {
+    -fx-text-alignment: center;
+    -fx-background-color: rgba(0, 0, 0, 0);
+    -fx-text-fill: white;
+    -fx-border-width: 2px;
+    -fx-border-color: white;
+    -fx-border-style: solid;
+    -fx-text-align: center;
+    -fx-text-decoration: none;
+    -fx-display: inline-block;
+    -fx-cursor: hand;
+}
+
+.but:hover {
+    -fx-background-color: white;
+    -fx-text-fill: black;
+}
