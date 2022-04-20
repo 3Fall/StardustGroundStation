@@ -17,14 +17,14 @@
             <Label fx:id="portLabel" styleClass="text" stylesheets="@index.css" text="Port: " />
          </children>
          <padding>
-            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            <Insets bottom="13.0" left="16.0" right="13.0" top="13.0" />
          </padding>
       </HBox>
    </top>
    <left>
       <VBox prefHeight="300.0" prefWidth="300.0" BorderPane.alignment="CENTER">
          <children>
-            <Label prefWidth="300.0" stylesheets="@index.css" text="System state: ">
+            <Label fx:id="labelSystemState" prefWidth="300.0" stylesheets="@index.css" text="System state: ">
                <styleClass>
                   <String fx:value="text" />
                   <String fx:value="text-field" />
@@ -33,7 +33,7 @@
                   <Insets bottom="3.0" left="6.0" right="3.0" top="3.0" />
                </padding>
             </Label>
-            <Label prefWidth="300.0" stylesheets="@index.css" text="Battery voltage: ">
+            <Label fx:id="labelBatteryVoltage" prefWidth="300.0" stylesheets="@index.css" text="Battery voltage: ">
                <styleClass>
                   <String fx:value="text" />
                   <String fx:value="text-field" />
@@ -42,7 +42,7 @@
                   <Insets bottom="3.0" left="6.0" right="3.0" top="3.0" />
                </padding>
             </Label>
-            <Label prefWidth="300.0" stylesheets="@index.css" text="Bus5V voltage: ">
+            <Label fx:id="labalBusVoltage" prefWidth="300.0" stylesheets="@index.css" text="Bus5V voltage: ">
                <styleClass>
                   <String fx:value="text" />
                   <String fx:value="text-field" />
@@ -51,7 +51,7 @@
                   <Insets bottom="3.0" left="6.0" right="3.0" top="3.0" />
                </padding>
             </Label>
-            <Label prefWidth="300.0" stylesheets="@index.css" text="Baro altitude: ">
+            <Label fx:id="labelBaroAltitude" prefWidth="300.0" stylesheets="@index.css" text="Baro altitude: ">
                <styleClass>
                   <String fx:value="text" />
                   <String fx:value="text-field" />
@@ -60,7 +60,7 @@
                   <Insets bottom="3.0" left="6.0" right="3.0" top="3.0" />
                </padding>
             </Label>
-            <Label prefWidth="300.0" stylesheets="@index.css" text="Pyro state">
+            <Label fx:id="labelPyroState" prefWidth="300.0" stylesheets="@index.css" text="Pyro state">
                <styleClass>
                   <String fx:value="text" />
                   <String fx:value="text-field" />
@@ -69,7 +69,7 @@
                   <Insets bottom="3.0" left="6.0" right="3.0" top="3.0" />
                </padding>
             </Label>
-            <Label prefWidth="300.0" stylesheets="@index.css" text="Pressure:">
+            <Label fx:id="labelPressure" prefWidth="300.0" stylesheets="@index.css" text="Pressure:">
                <styleClass>
                   <String fx:value="text" />
                   <String fx:value="text-field" />
@@ -78,7 +78,7 @@
                   <Insets bottom="3.0" left="6.0" right="3.0" top="3.0" />
                </padding>
             </Label>
-            <Label prefWidth="300.0" stylesheets="@index.css" text="Temperatue:">
+            <Label fx:id="labelTemperature" prefWidth="300.0" stylesheets="@index.css" text="Temperatue:">
                <styleClass>
                   <String fx:value="text" />
                   <String fx:value="text-field" />
@@ -87,7 +87,7 @@
                   <Insets bottom="3.0" left="6.0" right="3.0" top="3.0" />
                </padding>
             </Label>
-            <Label prefWidth="300.0" stylesheets="@index.css" text="Acceleration x:">
+            <Label fx:id="labelAccelerationX" prefWidth="300.0" stylesheets="@index.css" text="Acceleration x:">
                <styleClass>
                   <String fx:value="text" />
                   <String fx:value="text-field" />
@@ -96,7 +96,7 @@
                   <Insets bottom="3.0" left="6.0" right="3.0" top="3.0" />
                </padding>
             </Label>
-            <Label prefWidth="300.0" stylesheets="@index.css" text="Acceleration y:">
+            <Label fx:id="labelAccelerationY" prefWidth="300.0" stylesheets="@index.css" text="Acceleration y:">
                <styleClass>
                   <String fx:value="text" />
                   <String fx:value="text-field" />
@@ -105,7 +105,7 @@
                   <Insets bottom="3.0" left="6.0" right="3.0" top="3.0" />
                </padding>
             </Label>
-            <Label prefWidth="300.0" stylesheets="@index.css" text="Acceleration z:">
+            <Label fx:id="labelAccelerationZ" prefWidth="300.0" stylesheets="@index.css" text="Acceleration z:">
                <styleClass>
                   <String fx:value="text" />
                   <String fx:value="text-field" />
@@ -114,7 +114,7 @@
                   <Insets bottom="3.0" left="6.0" right="3.0" top="3.0" />
                </padding>
             </Label>
-            <Label prefWidth="300.0" stylesheets="@index.css" text="Gyro x:">
+            <Label fx:id="labelGyroX" prefWidth="300.0" stylesheets="@index.css" text="Gyro x:">
                <styleClass>
                   <String fx:value="text" />
                   <String fx:value="text-field" />
@@ -123,7 +123,7 @@
                   <Insets bottom="3.0" left="6.0" right="3.0" top="3.0" />
                </padding>
             </Label>
-            <Label prefWidth="300.0" stylesheets="@index.css" text="Gyro y:">
+            <Label fx:id="labelGyroY" prefWidth="300.0" stylesheets="@index.css" text="Gyro y:">
                <styleClass>
                   <String fx:value="text" />
                   <String fx:value="text-field" />
@@ -132,7 +132,7 @@
                   <Insets bottom="3.0" left="6.0" right="3.0" top="3.0" />
                </padding>
             </Label>
-            <Label prefWidth="300.0" stylesheets="@index.css" text="Gyro z:">
+            <Label fx:id="labelGyroZ" prefWidth="300.0" stylesheets="@index.css" text="Gyro z:">
                <styleClass>
                   <String fx:value="text" />
                   <String fx:value="text-field" />
@@ -141,7 +141,7 @@
                   <Insets bottom="3.0" left="6.0" right="3.0" top="3.0" />
                </padding>
             </Label>
-            <Label prefWidth="300.0" stylesheets="@index.css" text="Gyro w:">
+            <Label fx:id="labelGyroW" prefWidth="300.0" stylesheets="@index.css" text="Gyro w:">
                <styleClass>
                   <String fx:value="text" />
                   <String fx:value="text-field" />
@@ -150,7 +150,7 @@
                   <Insets bottom="3.0" left="6.0" right="3.0" top="3.0" />
                </padding>
             </Label>
-            <Label prefWidth="300.0" stylesheets="@index.css" text="GPS n:">
+            <Label fx:id="labelGpsN" prefWidth="300.0" stylesheets="@index.css" text="GPS n:">
                <styleClass>
                   <String fx:value="text" />
                   <String fx:value="text-field" />
@@ -159,7 +159,7 @@
                   <Insets bottom="3.0" left="6.0" right="3.0" top="3.0" />
                </padding>
             </Label>
-            <Label prefWidth="300.0" stylesheets="@index.css" text="GPS e:">
+            <Label fx:id="labelGpsE" prefWidth="300.0" stylesheets="@index.css" text="GPS e:">
                <styleClass>
                   <String fx:value="text" />
                   <String fx:value="text-field" />
@@ -168,7 +168,7 @@
                   <Insets bottom="3.0" left="6.0" right="3.0" top="3.0" />
                </padding>
             </Label>
-            <Label prefWidth="300.0" stylesheets="@index.css" text="GPS altitude:">
+            <Label fx:id="labelGpsAltitude" prefWidth="300.0" stylesheets="@index.css" text="GPS altitude:">
                <styleClass>
                   <String fx:value="text" />
                   <String fx:value="text-field" />
@@ -177,7 +177,7 @@
                   <Insets bottom="3.0" left="6.0" right="3.0" top="3.0" />
                </padding>
             </Label>
-            <Label prefWidth="300.0" stylesheets="@index.css" text="Vdop:">
+            <Label fx:id="labelVdop" prefWidth="300.0" stylesheets="@index.css" text="Vdop:">
                <styleClass>
                   <String fx:value="text" />
                   <String fx:value="text-field" />
@@ -186,7 +186,7 @@
                   <Insets bottom="3.0" left="6.0" right="3.0" top="3.0" />
                </padding>
             </Label>
-            <Label prefWidth="300.0" stylesheets="@index.css" text="Hdop:">
+            <Label fx:id="labelHdop" prefWidth="300.0" stylesheets="@index.css" text="Hdop:">
                <styleClass>
                   <String fx:value="text" />
                   <String fx:value="text-field" />
@@ -195,7 +195,7 @@
                   <Insets bottom="3.0" left="6.0" right="3.0" top="3.0" />
                </padding>
             </Label>
-            <Label prefWidth="300.0" stylesheets="@index.css" text="GPS satellites:">
+            <Label fx:id="labelGpsSatellites" prefWidth="300.0" stylesheets="@index.css" text="GPS satellites:">
                <styleClass>
                   <String fx:value="text" />
                   <String fx:value="text-field" />
@@ -204,7 +204,7 @@
                   <Insets bottom="3.0" left="6.0" right="3.0" top="3.0" />
                </padding>
             </Label>
-            <Label prefWidth="300.0" stylesheets="@index.css" text="Est x:">
+            <Label fx:id="labelEstimateX" prefWidth="300.0" stylesheets="@index.css" text="Est x:">
                <styleClass>
                   <String fx:value="text" />
                   <String fx:value="text-field" />
@@ -213,7 +213,7 @@
                   <Insets bottom="3.0" left="6.0" right="3.0" top="3.0" />
                </padding>
             </Label>
-            <Label prefWidth="300.0" stylesheets="@index.css" text="Est y:">
+            <Label fx:id="labelEstimateY" prefWidth="300.0" stylesheets="@index.css" text="Est y:">
                <styleClass>
                   <String fx:value="text" />
                   <String fx:value="text-field" />
@@ -222,7 +222,7 @@
                   <Insets bottom="3.0" left="6.0" right="3.0" top="3.0" />
                </padding>
             </Label>
-            <Label prefWidth="300.0" stylesheets="@index.css" text="Est z:">
+            <Label fx:id="labelEstimateZ" prefWidth="300.0" stylesheets="@index.css" text="Est z:">
                <styleClass>
                   <String fx:value="text" />
                   <String fx:value="text-field" />
@@ -231,7 +231,7 @@
                   <Insets bottom="3.0" left="6.0" right="3.0" top="3.0" />
                </padding>
             </Label>
-            <Label prefWidth="300.0" stylesheets="@index.css" text="Velocity x:">
+            <Label fx:id="labelVelocityX" prefWidth="300.0" stylesheets="@index.css" text="Velocity x:">
                <styleClass>
                   <String fx:value="text" />
                   <String fx:value="text-field" />
@@ -240,7 +240,7 @@
                   <Insets bottom="3.0" left="6.0" right="3.0" top="3.0" />
                </padding>
             </Label>
-            <Label prefWidth="300.0" stylesheets="@index.css" text="Velocity y:">
+            <Label fx:id="labelVelocityY" prefWidth="300.0" stylesheets="@index.css" text="Velocity y:">
                <styleClass>
                   <String fx:value="text" />
                   <String fx:value="text-field" />
@@ -249,7 +249,7 @@
                   <Insets bottom="3.0" left="6.0" right="3.0" top="3.0" />
                </padding>
             </Label>
-            <Label prefWidth="300.0" stylesheets="@index.css" text="Velocity z:">
+            <Label fx:id="labelVelocityZ" prefWidth="300.0" stylesheets="@index.css" text="Velocity z:">
                <styleClass>
                   <String fx:value="text" />
                   <String fx:value="text-field" />
@@ -258,7 +258,7 @@
                   <Insets bottom="3.0" left="6.0" right="3.0" top="3.0" />
                </padding>
             </Label>
-            <Label prefWidth="300.0" stylesheets="@index.css" text="RRSI: ">
+            <Label fx:id="labelRRSI" prefWidth="300.0" stylesheets="@index.css" text="RRSI: ">
                <styleClass>
                   <String fx:value="text" />
                   <String fx:value="text-field" />
@@ -267,7 +267,7 @@
                   <Insets bottom="3.0" left="6.0" right="3.0" top="3.0" />
                </padding>
             </Label>
-            <Label prefWidth="300.0" stylesheets="@index.css" text="SNR:">
+            <Label fx:id="labelSNR" prefWidth="300.0" stylesheets="@index.css" text="SNR:">
                <styleClass>
                   <String fx:value="text" />
                   <String fx:value="text-field" />
