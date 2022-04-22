@@ -28,7 +28,7 @@ import java.util.Objects;
  * @apiNote Uninitialized array will be filled greedly. no data can follow.
  * @implNote Uses 8-bit (1 byte) characters for compatibility with arduino!!!!
  */
-public class GenericObjectDeserializer {
+class GenericObjectDeserializer {
 	/**
 	 * Primary deserialization function. Works in-place
 	 * @param arr byte array to deserialize

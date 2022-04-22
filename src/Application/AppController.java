@@ -64,10 +64,10 @@ public class AppController{
             if(packet.size() > 0) {
                 byte[] decoded = Base64.getDecoder().decode(packet.toByteArray());
                 pack = new Package();
-                ObjectDeserializer deserializer = new ObjectDeserializer();
+
 
                 try {
-                    deserializer.deserialize(decoded, pack);
+                    GenericObjectDeserializer.deserialize(decoded, pack);
                 } catch (IllegalAccessException e) {
                     e.printStackTrace();
                 }
