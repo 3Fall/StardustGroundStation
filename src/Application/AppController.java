@@ -82,7 +82,7 @@ public class AppController{
     }
 
     public void launch(ActionEvent event){
-
+        //yeaa
     }
 
     public void armParachute(ActionEvent event){
