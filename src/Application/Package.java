@@ -1,6 +1,10 @@
 package Application;
 
+import javafx.scene.control.Label;
+
 import java.io.Serializable;
+import java.lang.reflect.Field;
+import java.util.Locale;
 
 public class Package implements Serializable {
     public byte system_state;
@@ -10,33 +14,49 @@ public class Package implements Serializable {
     public byte pyro_states;
     public float pressure;
     public short temperature;
-    public float acc_x;
-    public float acc_y;
-    public float acc_z;
-    public float q_x;
-    public float q_y;
-    public float q_z;
-    public float q_w;
+    public float acceleration_x;
+    public float acceleration_y;
+    public float acceleration_z;
+    public float gyroscope_x;
+    public float gyroscope_y;
+    public float gyroscope_z;
+    public float gyroscope_w;
     public float gps_n;
     public float gps_e;
     public float gps_alt;
     public short vdop;
     public short pdop;
-    public byte gps_sats;
-    public float est_x;
-    public float est_y;
-    public float est_z;
-    public float v_x;
-    public float v_y;
-    public float v_z;
-    public short rssi;
-    public float snr;
+    public byte gps_satellites;
+    public float estimate_x;
+    public float estimate_y;
+    public float estimate_z;
+    public float velocity_x;
+    public float velocity_y;
+    public float velocity_z;
+    public short RRSI;
+    public float SNR;
 
-    public Package(){
+    public Package(){}
 
+    private String getSystemState() {
+        return "idk";
     }
 
-    public void printState(){
-        System.out.println(system_state);
+    public void resetLabels(Label label){
+        String res = "";
+        for(Field field : this.getClass().getFields()){
+            switch(field.getName().replace('_', ' ')){
+                case "system state":
+                    res += field.getName().replace('_', ' ') + ": " + this.getSystemState() + "\n";
+                default:
+                    try {
+                        res += field.getName().replace('_', ' ') + ": " + field.get(this) + "\n";
+                    } catch (IllegalAccessException e) {
+                        e.printStackTrace();
+                    }
+            }
+
+        }
+        label.setText(res);
     }
 }
