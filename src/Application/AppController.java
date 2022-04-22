@@ -67,7 +67,7 @@ public class AppController{
 
 
                 try {
-                    GenericObjectDeserializer.deserialize(decoded, pack);
+                    ObjectDeserializer.deserialize(decoded, pack);
                 } catch (IllegalAccessException e) {
                     e.printStackTrace();
                 }
