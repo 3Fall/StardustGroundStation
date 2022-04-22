@@ -7,11 +7,11 @@ import javafx.fxml.FXML;
 import javafx.scene.chart.LineChart;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
-import theleo.jstruct.Mem;
-import theleo.jstruct.Struct;
 
-import java.io.ByteArrayOutputStream;
+import java.io.*;
 
+import java.lang.reflect.Field;
+import java.nio.ByteBuffer;
 import java.util.Base64;
 
 
@@ -23,31 +23,12 @@ public class AppController{
 
     @FXML Label labelSystemState;
 
-
-    @Struct
-    class Package{
-        byte system_state;
-        short battery_voltage;
-        short bus5v_voltage;
-        float baro_altitude;
-        byte pyro_states;
-        float pressure;
-        short temperature;
-        float acc_x, acc_y, acc_z;
-        float q_w, q_x, q_y, q_z;
-        float gps_n, gps_e;
-        float gps_alt;
-        short vdop, pdop;
-        byte gps_sats;
-        float est_x, est_y, est_z;
-        float v_x, v_y, v_z;
-        short rssi;
-        float snr;
-    }
+    Package p = new Package();
 
     ByteArrayOutputStream packet = new ByteArrayOutputStream();
 
     public void setPortLabel(int port) {
+
         //System.out.println(Mem.layoutString(Package.class));
         portLabel.setText("Port: " + SerialPort.getCommPorts()[port].toString());
         SerialPort serial = SerialPort.getCommPorts()[port];
@@ -66,27 +47,26 @@ public class AppController{
                 for(byte b : buffer){
                     addToConsole(b);
                 }
-
             }
         });
     }
 
     public void addToConsole(byte item){
 
+        //System.out.println(item);
+
         if((char)item == '\n'){
             if(packet.size() > 0) {
                 //console.getItems().add(packet);
-                byte[] pac = packet.toByteArray();
-                for(byte b : pac){
-                    System.out.print((char)b);
-                }
-                System.out.print(" ");
+                byte[] decoded = Base64.getDecoder().decode(packet.toByteArray());
+                p = new Package();
+                ObjectDeserializer deserializer = new ObjectDeserializer();
 
-                byte[] decoded = Base64.getDecoder().decode(pac);
-                for(byte b : decoded){
-                    System.out.print((char)b);
+                try {
+                    deserializer.deserialize(decoded, p);
+                } catch (IllegalAccessException e) {
+                    e.printStackTrace();
                 }
-                System.out.println();
             }
 
             packet = new ByteArrayOutputStream();
