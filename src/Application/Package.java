@@ -21,8 +21,8 @@ public class Package implements Serializable {
     public float gyroscope_y;
     public float gyroscope_z;
     public float gyroscope_w;
-    public float gps_n;
-    public float gps_e;
+    public float gps_n = 0.0f;
+    public float gps_e = 0.0f;
     public float gps_alt;
     public short vdop;
     public short pdop;

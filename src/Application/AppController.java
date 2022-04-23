@@ -6,32 +6,43 @@ import com.fazecast.jSerialComm.SerialPortEvent;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.chart.LineChart;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.scene.image.ImageView;
+
 
 import java.io.*;
 
 import java.util.Base64;
+
+import static Application.DistanceCalculator.calculateDistance;
 
 
 public class AppController{
 
     @FXML Label portLabel;
     @FXML Label labelTelemetry;
+    @FXML Label labelCompass;
 
-    @FXML ListView<String> console;
+    @FXML
+    ImageView compass;
 
     @FXML Button buttonLaunch;
     @FXML Button buttonArmParachute;
     @FXML Button buttonEnableTVC;
     @FXML Button buttonSuspendMission;
     @FXML Button buttonChangePort;
+    @FXML Button buttonSetHome;
 
     Package pack = new Package();
 
     ByteArrayOutputStream packet = new ByteArrayOutputStream();
+
+    public float initial_pos_n = 0;
+    public float initial_pos_e = 0;
+
+    public int port;
 
     SerialPort serial = null;
 
@@ -39,6 +50,11 @@ public class AppController{
 
         //System.out.println(Mem.layoutString(Package.class));
         portLabel.setText("Port: " + SerialPort.getCommPorts()[port].toString());
+        resetSerial(port);
+        this.port = port;
+    }
+
+    public void resetSerial(int port) {
         serial = SerialPort.getCommPorts()[port];
         serial.openPort();
         serial.addDataListener(new SerialPortDataListener() {
@@ -64,16 +80,14 @@ public class AppController{
             if(packet.size() > 0) {
                 byte[] decoded = Base64.getDecoder().decode(packet.toByteArray());
                 pack = new Package();
-
-
                 try {
                     ObjectDeserializer.deserialize(decoded, pack);
                 } catch (IllegalAccessException e) {
                     e.printStackTrace();
                 }
-
-                System.out.println(pack.system_state);
                 Platform.runLater(() -> pack.resetLabels(labelTelemetry));
+                compass.setRotate(Math.atan2(pack.gps_n-initial_pos_n, pack.gps_e-initial_pos_e) * 180 / Math.PI);
+                Platform.runLater(() -> labelCompass.setText("The rocket is approximately\n" + Float.toString(calculateDistance(initial_pos_n,initial_pos_e,pack.gps_n,pack.gps_e)) + " meters away"));
             }
             packet = new ByteArrayOutputStream();
         }else{
@@ -82,7 +96,9 @@ public class AppController{
     }
 
     public void launch(ActionEvent event){
-        //yeaa
+        System.out.println("ready to send");
+        byte[] testpacket = {1,2,3,4};
+        sendData(testpacket,4);
     }
 
     public void armParachute(ActionEvent event){
@@ -105,11 +121,18 @@ public class AppController{
         //TODO program this shit
     }
 
+    public void setHome(ActionEvent event){
+        initial_pos_n = pack.gps_n;
+        initial_pos_e = pack.gps_e;
+    }
+
     private void sendData(byte[] arr, int datasize){
+        System.out.println("sending data");
         serial.writeBytes(arr, datasize);
         byte[] endl = new byte[1];
         endl[0] = 10;
         serial.writeBytes(endl, 1);
+        System.out.println("data sent");
 
     }
 }

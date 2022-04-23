@@ -1,0 +1,32 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="GroundStation:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/GroundStation_jar</output-path>
+    <root id="archive" name="GroundStation.jar">
+      <element id="module-output" name="GroundStation" />
+      <element id="extracted-dir" path="$USER_HOME$/Downloads/jSerialComm-2.9.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/Downloads/javafx-sdk-18/lib/javafx-swt.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/Downloads/javafx-sdk-18/lib/javafx.web.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/Downloads/javafx-sdk-18/lib/javafx.base.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/Downloads/javafx-sdk-18/lib/javafx.fxml.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/Downloads/javafx-sdk-18/lib/javafx.media.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/Downloads/javafx-sdk-18/lib/javafx.swing.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/Downloads/javafx-sdk-18/lib/javafx.controls.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/Downloads/javafx-sdk-18/lib/javafx.graphics.jar" path-in-jar="/" />
+      <element id="file-copy" path="$USER_HOME$/Downloads/javafx-sdk-18/lib/libdecora_sse.dylib" />
+      <element id="file-copy" path="$USER_HOME$/Downloads/javafx-sdk-18/lib/libjfxmedia.dylib" />
+      <element id="file-copy" path="$USER_HOME$/Downloads/javafx-sdk-18/lib/libprism_es2.dylib" />
+      <element id="file-copy" path="$USER_HOME$/Downloads/javafx-sdk-18/lib/libprism_common.dylib" />
+      <element id="file-copy" path="$USER_HOME$/Downloads/javafx-sdk-18/lib/libfxplugins.dylib" />
+      <element id="file-copy" path="$USER_HOME$/Downloads/javafx-sdk-18/lib/libglass.dylib" />
+      <element id="file-copy" path="$USER_HOME$/Downloads/javafx-sdk-18/lib/libglib-lite.dylib" />
+      <element id="file-copy" path="$USER_HOME$/Downloads/javafx-sdk-18/lib/libjavafx_iio.dylib" />
+      <element id="file-copy" path="$USER_HOME$/Downloads/javafx-sdk-18/lib/libjfxmedia_avf.dylib" />
+      <element id="file-copy" path="$USER_HOME$/Downloads/javafx-sdk-18/lib/libgstreamer-lite.dylib" />
+      <element id="file-copy" path="$USER_HOME$/Downloads/javafx-sdk-18/lib/libjavafx_font.dylib" />
+      <element id="file-copy" path="$USER_HOME$/Downloads/javafx-sdk-18/lib/libjfxwebkit.dylib" />
+      <element id="file-copy" path="$USER_HOME$/Downloads/javafx-sdk-18/lib/libprism_sw.dylib" />
+      <element id="library" level="project" name="jSerialComm-2.9.1" />
+      <element id="library" level="project" name="lib" />
+    </root>
+  </artifact>
+</component>
